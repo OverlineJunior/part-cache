@@ -61,7 +61,9 @@ export class PartStash {
 				this.open.push(part);
 			}
 		} else if (newSize < this.size && this.open.size() > 0) {
-			for (let i = 0; i < math.clamp(this.size - newSize, 1, this.open.size()); i) {
+			const openSize = this.open.size();
+
+			for (let i = 0; i < math.clamp(this.size - newSize, 1, openSize); i++) {
 				const part = this.open.pop()!;
 				part.Destroy();
 			}
