@@ -54,6 +54,7 @@ export class PartStash {
 		if (newSize > this.size) {
 			for (let i = 0; i < newSize - this.size; i++) {
 				const part = this.template.Clone();
+				part.CFrame = FAR_CFRAME;
 				part.Anchored = true;
 				part.Parent = this.parent;
 
