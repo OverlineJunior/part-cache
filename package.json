@@ -1,5 +1,5 @@
 {
-  "name": "@rbxts/part-cache",
+  "name": "@rbxts/part-stash",
   "version": "1.0.0",
   "description": "",
   "main": "out/init.lua",

@@ -1,6 +1,6 @@
 const FAR_CFRAME = new CFrame(0, math.huge, 0);
 
-export class PartCache {
+export class PartStash {
 	private template: BasePart;
 	private size: number;
 	private parent: Instance;
@@ -25,7 +25,7 @@ export class PartCache {
 			part.Anchored = this.wasTemplateAnchored;
 			return part;
 		} else {
-			error("No available part in the cache.");
+			error("No available parts.");
 		}
 	}
 
