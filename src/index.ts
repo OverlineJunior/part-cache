@@ -33,10 +33,8 @@ export class PartStash {
 		const index = this.inUse.indexOf(part);
 		assert(index !== -1, `Part ${part.GetFullName()} is not in use.`);
 
-		this.inUse.remove(index);
-
-		const isOpenFull = this.open.size() === this.size;
-		if (isOpenFull) {
+		const overflow = this.inUse.size() > this.size;
+		if (overflow) {
 			// Probably due to a new size smaller than this.open's size.
 			part.Destroy();
 		} else {
@@ -44,6 +42,8 @@ export class PartStash {
 			part.CFrame = FAR_CFRAME;
 			part.Anchored = true;
 		}
+
+		this.inUse.remove(index);
 	}
 
 	getSize() {
